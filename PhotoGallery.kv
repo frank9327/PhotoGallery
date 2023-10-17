@@ -1,0 +1,38 @@
+Display
+
+<Display>:
+    BoxLayout:
+        orientation : "vertical"
+        BoxLayout:
+            orientation: "vertical"
+            BoxLayout:
+                orientation: "horizontal"
+                TextInput:
+                    id:img
+                    hint_text: "Enter image name (e.g,image,png)"
+                Button:
+                    text: "load image"
+                    on_release: root.load_image()
+            BoxLayout:
+                orientation: "horizontal"
+                Button:
+                    text: "Vertical lines"
+                    on_release: root.vertical_lines(root.ids.image.source,"space",0,20,200)
+                Button:
+                    text: "Diagonal lines"
+                    on_release: root.diagnol_lines(root.ids.image.source,"space",0,20,200)
+            BoxLayout:
+                orientation: "horizontal"
+                Button:
+                    text: "<<<"
+                Button:
+                    text: "<<<"
+            BoxLayout:
+                orientation: "horizontal"
+                Button:
+                    text: "<<<"
+                Button:
+                    text: "<<<"
+        Image:
+            id: image
+            source: ""
