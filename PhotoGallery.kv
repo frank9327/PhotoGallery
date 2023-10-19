@@ -1,4 +1,21 @@
-Display
+MouseTouch
+
+<MouseTouch>:
+    txtinput: enter
+    button: load
+    image: img
+    BoxLayout:
+        size: "800dp", "600dp"
+        orientation: "vertical"
+        TextInput:
+            id: enter
+        Button:
+            id: load
+            text: "Press me"
+        Image:
+            id: img
+            source: ""
+            size_hint: 1,10
 
 <Display>:
     BoxLayout:
@@ -24,15 +41,19 @@ Display
             BoxLayout:
                 orientation: "horizontal"
                 Button:
-                    text: "<<<"
+                    text: "Invert"
+                    on_release: root.invert(root.ids.image.source)
                 Button:
-                    text: "<<<"
+                    text: "Sepia"
+                    on_release: root.sepia(root.ids.image.source)
             BoxLayout:
                 orientation: "horizontal"
                 Button:
-                    text: "<<<"
+                    text: "black and white"
+                    on_release: root.black_and_white(root.ids.image.source)
                 Button:
-                    text: "<<<"
+                    text: "Pixelate"
+                    on_release: root.pixelate(root.ids.image.source,"space",50,50,75,75)
         Image:
             id: image
             source: ""
